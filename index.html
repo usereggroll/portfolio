@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaixin Guo | Geospatial Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray */
+            color: #1e293b; /* Slate 800 */
+        }
+        .section {
+            min-height: 100vh;
+            padding-top: 8rem; /* Add padding to account for fixed header */
+            padding-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #home {
+            background-image: linear-gradient(to right, rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.7)), url('sea.jpg');
+            background-size: cover;
+            background-position: center 30%;
+        }
+                .profile-pic-container {
+            display: inline-block;
+            padding: 8px;
+            border: 3px dashed #0ea5e9; /* Sky 500 */
+            border-radius: 50%;
+        }
+        .profile-pic-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .section-bg {
+            background-color: #f1f5f9; /* Slate 100 */
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0; /* Slate 200 */
+            border-radius: 1rem;
+            box-shadow: 0 4px_6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+        }
+        nav a:hover {
+            color: #0ea5e9; /* Sky 500 */
+        }
+        .skill-tag {
+            background-color: #e2e8f0; /* Slate 200 */
+            color: #334155; /* Slate 600 */
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .highlight {
+            border-bottom: 3px solid #38bdf8; /* Sky 400 */
+            padding-bottom: 2px;
+        }
+        /* Simple scrollbar styling for experience section */
+        .experience-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .experience-container::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        .experience-container::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 10px;
+        }
+        .experience-container::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm border-b border-slate-200/80">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-slate-800">Kaixin Guo</a>
+                </div>
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-sky-500">About</a>
+                        <a href="#projects" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-sky-500">Projects</a>
+                        <a href="#experience" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-sky-500">Experience</a>
+                        <a href="#skills" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-sky-500">Skills</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-sky-500">Contact</a>
+                    </div>
+                </nav>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-100">About</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-100">Projects</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-100">Experience</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-100">Skills</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-100">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Home Section -->
+        <section id="home" class="section items-center text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="profile-pic-container mb-6 mx-auto">
+                    <img src="me.jpg" alt="Profile Photo">
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-4">Kaixin Guo</h1>
+                <p class="text-xl md:text-2xl color-accent mb-8">GIS & Remote Sensing Data Analyst</p>
+                <div class="flex justify-center items-center space-x-6 mb-8">
+                    <a href="https://www.linkedin.com/in/kaixin-guo/" target="_blank" class="text-slate-500 hover:text-slate-800">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">About <span class="highlight">Me</span></h2>
+            <div class="max-w-3xl mx-auto card p-8">
+                <p class="text-lg text-slate-600 leading-relaxed">
+                     Graduate MSc GIS student with expertise in Python based geospatial data engineering and remote sensing. Experienced in building automated workflows for processing large scale environmental and urban datasets using ArcGIS, QGIS, Python, and ERDAS. Passionate about applying geospatial technologies to support sustainable development and natural environment conservation.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section section-bg">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12"> <span class="highlight">Projects</span></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Project 1 -->
+                    <div class="card overflow-hidden group flex flex-col">
+                        <img src="dune.jpg" alt="Coastal Dune Erosion Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Coastal Dune Erosion using UAV LiDAR</h3>
+                            <p class="text-slate-600 mb-4 text-sm flex-grow">Dissertation project involving UAV field surveys, LiDAR point cloud processing, and multi-temporal analysis to identify erosion hotspots and support coastal management.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">UAV</span><span class="skill-tag">LiDAR</span><span class="skill-tag">CloudCompare</span><span class="skill-tag">Pix4D</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="card overflow-hidden group flex flex-col">
+                        <img src="greenspace.png" alt="Greenspace Web Map Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Greenspace Quality & Deprivation Web Map</h3>
+                            <p class="text-slate-600 mb-4 text-sm flex-grow">Developed a responsive Leaflet.js interactive web map to communicate greenspace quality and deprivation patterns in Edinburgh, integrating data from field surveys and SQL.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="skill-tag">Web Mapping</span><span class="skill-tag">SQL</span><span class="skill-tag">ArcGIS</span>
+                            </div>
+                            <div class="mt-4">
+                               <a href="https://usereggroll.github.io/greenspace/" target="_blank" class="font-medium text-sky-600 hover:text-sky-800">View Webmap &rarr;</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="card overflow-hidden group flex flex-col">
+                        <img src="landuse.png" alt="Land Use Classification Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Land Use & Land Cover Classification</h3>
+                            <p class="text-slate-600 mb-4 text-sm flex-grow">Analyzed Landsat satellite imagery to perform supervised classification, mapping diverse land cover types to monitor environmental changes and inform regional planning.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Remote Sensing</span><span class="skill-tag">Landsat</span><span class="skill-tag">Classification</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="card overflow-hidden group flex flex-col">
+                        <img src="network.png" alt="Network Analysis Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Emergency Services Accessibility Analysis</h3>
+                            <p class="text-slate-600 mb-4 text-sm flex-grow">Utilized network analysis to model response times for fire stations, identifying areas with coverage gaps to optimize resource allocation and improve public safety.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Network Analysis</span><span class="skill-tag">ArcGIS Pro</span><span class="skill-tag">Service Area</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="card overflow-hidden group flex flex-col">
+                        <img src="som.png" alt="Self-Organizing Map Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Clustering Social Deprivation with SOM</h3>
+                            <p class="text-slate-600 mb-4 text-sm flex-grow">A Self-Organizing Map (SOM) to cluster multidimensional social deprivation data, revealing hidden spatial patterns and neighbourhood typologies within Edinburgh.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Machine Learning</span><span class="skill-tag">SOM</span><span class="skill-tag">R</span><span class="skill-tag">Clustering</span>
+                            </div>
+                             <div class="mt-4">
+                               <a href="https://github.com/usereggroll/self-organized-maps" target="_blank" class="font-medium text-sky-600 hover:text-sky-800">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project 6 -->
+                    <div class="card overflow-hidden group flex flex-col">
+                        <img src="buffer.png" alt="Buffer Analysis Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Proximity Analysis for Urban Planning</h3>
+                            <p class="text-slate-600 mb-4 text-sm flex-grow">Created multi-ring buffers around residential and industrial zones to analyze spatial relationships, supporting data-driven zoning regulations and development strategies.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Buffer Analysis</span><span class="skill-tag">QGIS</span><span class="skill-tag">Urban Planning</span>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project 7 -->
+                    <div class="card overflow-hidden group flex flex-col">
+                        <img src="conceptdesign.png" alt="Conceptual Urban Design Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Conceptual Urban Regeneration Design</h3>
+                            <p class="text-slate-600 mb-4 text-sm flex-grow">A conceptual site plan for an urban regeneration project, focusing on integrating green spaces, improving connectivity, and creating a vibrant, mixed-use community.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Urban Design</span><span class="skill-tag">AutoCAD</span><span class="skill-tag">Site Planning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Professional <span class="highlight">Experience</span></h2>
+            <div class="w-full max-w-5xl mx-auto">
+                <div class="experience-container flex space-x-8 overflow-x-auto pb-6 -mx-4 px-4">
+                    <!-- Item 1 -->
+                    <div class="card p-6 flex-shrink-0 w-80 md:w-96">
+                        <p class="text-sm text-slate-500">Jan 2024 - Jul 2024</p>
+                        <h3 class="text-lg font-bold">GIS Technician</h3>
+                        <p class="text-md text-slate-700 mb-2">Ocean Research Centre</p>
+                        <ul class="list-disc list-inside text-sm text-slate-500 space-y-1">
+                            <li>Processed Sentinel-2 & Landsat data to classify shorelines.</li>
+                            <li>Utilised ArcPy scripts to batch process 900+ marine planning units.</li>
+                            <li>Digitised over 50 designated marine planning zones.</li>
+                        </ul>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="card p-6 flex-shrink-0 w-80 md:w-96">
+                        <p class="text-sm text-slate-500">May 2023 - Nov 2023</p>
+                        <h3 class="text-lg font-bold">Geospatial Analyst Intern</h3>
+                        <p class="text-md text-slate-700 mb-2">GeoScene (Esri)</p>
+                        <ul class="list-disc list-inside text-sm text-slate-500 space-y-1">
+                            <li>Developed multilayer ecological sensitivity maps in ArcGIS.</li>
+                            <li>Conducted spatial econometric analysis of rental pricing.</li>
+                            <li>Performed retail site suitability analysis using Network Analysis.</li>
+                        </ul>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="card p-6 flex-shrink-0 w-80 md:w-96">
+                        <p class="text-sm text-slate-500">Jul 2021 - Aug 2022</p>
+                        <h3 class="text-lg font-bold">Spatial Planning Assistant</h3>
+                        <p class="text-md text-slate-700 mb-2">Qushe Urban Planning Ltd.</p>
+                        <ul class="list-disc list-inside text-sm text-slate-500 space-y-1">
+                            <li>Created 3D site models and rendered visual outputs.</li>
+                            <li>Supported land use strategy development with site assessments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section section-bg">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Technical <span class="highlight">Skills</span></h2>
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-4">GIS & Remote Sensing</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">ArcGIS Pro</span><span class="skill-tag">Google Earth Engine</span><span class="skill-tag">QGIS</span><span class="skill-tag">ENVI</span><span class="skill-tag">ERDAS</span><span class="skill-tag">Pix4D</span><span class="skill-tag">Agisoft</span><span class="skill-tag">CloudCompare</span><span class="skill-tag">UAV Operation</span>
+                        </div>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-4">Data Analysis & Programming</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Python</span><span class="skill-tag">R</span><span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-4">Design, Visualisation & Surveying</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Power BI</span><span class="skill-tag">AutoCAD</span><span class="skill-tag">SketchUp</span><span class="skill-tag">Lumion</span><span class="skill-tag">Adobe Suite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section items-center text-center container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-4">Get In <span class="highlight">Touch</span></h2>
+            <p class="max-w-xl text-slate-600 mb-8">
+                I'm currently seeking opportunities in GIS analysis/Data Science. If you would like to connect, feel free to reach out!
+            </p>
+            <a href="mailto:kx.kaixinguo@gmail.com" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg">
+                kx.kaixinguo@gmail.com
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-6 text-sm text-slate-500 bg-slate-100">
+        <p>&copy; 2025 Kaixin Guo. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = mobileMenuButton.querySelector('svg:first-child');
+        const menuIconClose = mobileMenuButton.querySelector('svg:last-child');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a, nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                 if (!mobileMenu.classList.contains('hidden')) {
+                     mobileMenuButton.click();
+                 }
+            });
+        });
+    </script>
+</body>
+</html>
+
